@@ -1,0 +1,35 @@
+//Accept a String input from the stdin. Print the count of words in the String. Space is assumed to be the separator between words.Print the count of alphabets & numbers in the String
+
+// Eg. If the String input is I like doing exercise 4 times every week then the output should as below \
+Total words - 8 \
+alphabets - 32  \
+Numbers - 1   \
+
+
+
+#include<iostream>
+using namespace std;
+int main()
+{
+  
+  int a=0,w=1,d=0;
+  int i;
+  std::string str;
+  std::getline(std::cin,str);
+  for (i=0;str[i];i++)
+  {
+    
+      if (((str[i]>='a')&&(str[i]<='z'))||((str[i]>='A')&&(str[i]<='Z')))
+      a=a+1;                                                       // To count alphabets     
+    else if (str[i]==' ')
+      w=w+1;                                                     // By counting white spaces we will get the number of words
+    else if ((str[i]=='0')||(str[i]=='1')||(str[i]=='2')||(str[i]=='3')||(str[i]=='4')||(str[i]=='5')||(str[i]=='6')||(str[i]=='7')||(str[i]=='8')||(str[i]=='9'))
+      d=d+1;                                                       // To count digits
+    
+  }
+  std::cout<<"Total words-"<<w;
+  std::cout<<"\nalphabets -"<<a;
+  std::cout<<"\nNumbers-"<<d;
+  
+}
+

@@ -1,0 +1,30 @@
+
+// Write a program to record notes entered by a user. The program should do the following things: First asks the user’s name.Asks the user to enter a single-line note.After the user enters the note, it should get stored in USERNAME_notes.txt on a new line.
+// The user will be asked to enter multiple notes in a loop till he/she types exit.
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main()
+{
+std::string user,text;
+std::cout<<"Enter Your Name";
+std::cin>>user;
+fstream file;
+file.open ("USERNAME_notes.txt", ios::out | ios::in | ios::app ); //to open file
+while(text!="exit")
+{
+cout << "Write text to be written on file." << endl;  
+std::cin>>text;
+if(text=="exit")
+{
+
+return 0;
+}
+else
+{
+file << text << endl; //to write in to the file
+}
+}
+file.close();
+}
